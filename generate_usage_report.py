@@ -67,6 +67,8 @@ def generate_usage_report():
                     break
         print(f"${client['client_email']} - ${len(total_result)}")
         # Process fetched data from dd and generate report dict
+        day_counts = process_data_dicts(total_result)
+        
 
 
 generate_usage_report()

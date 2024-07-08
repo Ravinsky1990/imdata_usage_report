@@ -21,9 +21,9 @@ def process_data_dicts(data_dicts: list) -> dict:
             no_res += 1
             continue
 
-        job_request = json.loads(res["job_request"])
-        job_type = res["job_type"]
-        job_results = json.loads(res["job_results"])
+        job_request = json.loads(res["job_request"]['S'])
+        job_type = res["job_type"]['S']
+        job_results = json.loads(res["job_results"]['S'])
 
         if job_type == "address":
             day_counts["address_total_requests"] += 1
