@@ -3,6 +3,7 @@ import os
 from get_api_clients import get_api_clients
 from get_date_usage import get_date_usage
 from csv_reader import process_data_dicts
+from add_to_mysql_mock import add_to_mysql
 
 # import pandas as pd
 import boto3
@@ -68,7 +69,7 @@ def generate_usage_report():
         print(f"${client['client_email']} - ${len(total_result)}")
         # Process fetched data from dd and generate report dict
         day_counts = process_data_dicts(total_result)
-        
+        add_to_mysql(day_counts)
 
 
 generate_usage_report()
