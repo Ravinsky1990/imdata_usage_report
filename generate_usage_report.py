@@ -7,7 +7,6 @@ from add_to_mysql_mock import add_to_mysql
 
 # import pandas as pd
 import boto3
-from boto3.dynamodb.conditions import Key
 
 
 def generate_usage_report():

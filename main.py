@@ -1,6 +1,7 @@
 """
 Create usage report for broken users
 """
+
 import os
 
 import pandas as pd
@@ -68,7 +69,7 @@ def make_report():
                     isLastEvaluatedKey = False
             else:
                 break
-    df = pd.DataFrame.from_dict(total_result)
+    df = pd.DataFrame.from_dict(total_result)  # type: ignore
     df.to_csv("jeffl@visitordatainc.com_28_05.csv")
 
 
